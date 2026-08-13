@@ -4,6 +4,8 @@ import os
 load_dotenv()
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
+
+
 def analyze_resume(resume_text, job_description):
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
@@ -17,4 +19,4 @@ def analyze_resume(resume_text, job_description):
 Resume: {resume_text}
 Job Description: {job_description}"""}]
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content 
