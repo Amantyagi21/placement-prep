@@ -12,7 +12,7 @@ def summarize_pdf(pdf_text, summary_type):
         "Study Notes": f"Convert into easy study notes with headings:\n{pdf_text[:3000]}"
     }
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-20b",
         messages=[{"role": "user", "content": prompts[summary_type]}]
     )
     return response.choices[0].message.content

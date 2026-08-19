@@ -8,7 +8,7 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 def analyze_resume(resume_text, job_description):
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-20b",
         messages=[{"role": "user", "content": f"""Analyze this resume against the job description and provide:
 1. ATS Score (0-100)
 2. Matching Skills
